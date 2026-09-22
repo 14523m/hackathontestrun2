@@ -339,3 +339,8 @@ for i, member in enumerate(st.session_state.members):
 
 # Add Person Button
 st.button("➕ Add Another Person", on_click=add_member)
+st.button("➕ Add Another Person", on_click=add_member)
+
+# --- DEBUG / CURRENT DATA SUMMARY ---
+st.subheader("📋 Current Group Summary (Data)")
+st.json(st.session_state.members)
