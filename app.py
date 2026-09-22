@@ -1,41 +1,38 @@
 import streamlit as st
 
-# Page Configuration
-st.set_page_config(page_title="MeetPoint HK", page_icon="📍", layout="wide")
+st.set_page_config(
+    page_title="MeetPoint HK",
+    page_icon="📍",
+    layout="wide",
+)
 
 st.title("📍 MeetPoint HK")
-st.caption("Step 1: Group Member Setup & Preferences")
 
-# Predefined list of popular HK locations for testing
-HK_LOCATIONS = [
-    "HKUST (Clear Water Bay)",
-    "Central",
-    "PolyU (Hung Hom)",
-    "Causeway Bay",
-    "Mong Kok",
-    "Kwun Tong",
-    "Shatin",
-    "Tsuen Wan",
-    "Tsim Sha Tsui",
-    "TKO (Tseung Kwan O)",
-]
+st.markdown(
+    """
+    ## Find somewhere that works for everyone.
 
-ACTIVITIES = [
-    "Dinner / Food",
-    "Cafe / Coffee",
-    "Board Games / Leisure",
-    "Drinks / Bar",
-    "Shopping / Walking",
-]
+    MeetPoint helps groups find a meeting place by considering
+    everyone's location, availability, travel time, budget,
+    and activity preferences.
+    """
+)
 
-TIMES = [
-    "12:00 PM (Lunch)",
-    "3:00 PM (Afternoon Tea)",
-    "6:00 PM (Early Dinner)",
-    "7:30 PM (Dinner)",
-    "9:00 PM (Late Drinks)",
-]
+st.divider()
 
+col1, col2 = st.columns(2)
+
+with col1:
+    st.page_link(
+        "pages/1_Create_Meetup.py",
+        label="+ Create a Meetup",
+        icon="👥",
+    )
+
+with col2:
+    st.info(
+        "🔗 Joining a meetup will be added next."
+    )
 BUDGET_TIERS = ["<$100 HKD", "$100 - $250 HKD", "$250 - $500 HKD", "$500+ HKD"]
 
 # Initialize Session State
